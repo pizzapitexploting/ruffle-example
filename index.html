@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="title" content="Ruffle Example">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="language" content="English">
-  <title>Ruffle Example</title>
-  <script src="main.js"></script>
-  <noscript>Your browser doesn't have JavaScript enabled. Please enable JavaScript or switch to a browser that
-    supports it.</noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed SWF with Ruffle</title>
+    <script src="ruffle.js"></script>
 </head>
 <body>
-<div id='ruffle' class="gameloc"></div>
-<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-<script id = "gabe">swfobject.embedSWF("../ruffle-example/flashfiles/1on1soccer.swf", 'ruffle', 1600, 1200);</script>
+    <h1>SWF Embed using Ruffle</h1>
+    <div id="swf-container"></div>
+
+    <script>
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        
+        document.getElementById("swf-container").appendChild(player);
+
+        player.load("sauerkraut.swf");
+    </script>
 </body>
 </html>
-
